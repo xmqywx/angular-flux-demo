@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="cart">
+<head>
+    <meta charset="utf-8">
+    <title>Typescript & AngularJS • TodoMVC</title>
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-flux.js"></script>
+    <script src="app.js"></script>
+    <style>[ng-cloak] { display: none; }</style>
+</head>
+<body>
+<table ng-controller="ListCtrl">
+    <tr ng-repeat="item in cartItems">
+        <td>{{item.title}}</td>
+        <td>{{item.cost}}</td>
+        <td>
+            <button ng-click="addToCart(item)">Add to Cart</button>
+        </td>
+    </tr>
+    <h1>Cart</h1>
+    <table ng-controller="CartCtrl">
+        <tr ng-repeat="item in cartItems track by $id(item)">
+            <td>{{item.catalogItem.title}}</td>
+            <td>{{item.qty}}</td>
+            <td>
+                <button ng-click="removeItem(item)">x</button>
+            </td>
+        </tr>
+    </table>
+</table>
+</body>
+</html>
