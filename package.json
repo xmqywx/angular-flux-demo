@@ -1,15 +1,9 @@
 {
-  "name": "newedenfaces",
-  "description": "Character voting app for EVE Online",
+  "name": "demo",
+  "description": "One demo",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sahat/newedenfaces-react"
-  },
-  "main": "server.js",
   "scripts": {
-    "start": "babel-node server.js",
-    "watch": "nodemon --exec babel-node -- server.js"
+    "start": "gulp js:build"
   },
 
   "devDependencies": {
